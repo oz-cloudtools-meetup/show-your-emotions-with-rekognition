@@ -29,3 +29,11 @@ python3 index.py
 ```
  - AWS rekognition returns the metadata of the face
  - As we set "MaxFaces = 1", rekognition only return metadata about the most prominent face
+
+## Steps 4
+ - Generate a signed url for users without aws credentials to temporarily access the image
+ - Modify the variables in url_gen.py
+```bash
+python3 url_gen.py
+```
+ - Copy the url prompted on console and paste it to your browser
