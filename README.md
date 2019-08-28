@@ -22,3 +22,10 @@ aws rekognition create-collection --collection-id "aws-meetup"
 # - Run 'convertImageBase64.py' against the image file 
 # - in Cloud9 run 'assembleImg.py' against the base64 file obtained from last step
 ```
+## Steps 3
+ - Modify the variables in index.py
+```bash
+python3 index.py
+```
+ - AWS rekognition returns the metadata of the face
+ - As we set "MaxFaces = 1", rekognition only return metadata about the most prominent face
