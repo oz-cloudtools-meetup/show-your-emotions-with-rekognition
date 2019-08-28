@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import cv2
 import boto3
+import url_gen
 
 # Put bucketname here
 BUCKET = "<YOUR_BUCKET>"
@@ -75,3 +76,7 @@ cv2.rectangle(img, (left, top), (width, height), (0, 255, 0), 2)
 # Save this image and send it to s3
 cv2.imwrite(PROCESSED_IMAGE, img)
 s3.meta.client.upload_file(PROCESSED_IMAGE, BUCKET, PROCESSED_IMAGE)
+
+# Generate a signed url to access the image
+print("\nUse the url below to access the processed image: ")
+print(url_gen.create_presigned_url(BUCKET, PROCESSED_IMAGE, expiration=3600))
