@@ -2,6 +2,14 @@
 <!-- TODO -->
 <!-- Elaboration about the aws services used here S3 Rekognition Lambda -->
 <!-- list the pre-requisites for the workshop -->
+ - AWS services involved in this workshop
+    - S3 - https://aws.amazon.com/s3/
+    - Rekognition - https://aws.amazon.com/rekognition/
+    - (Workshop extra) Lambda - https://aws.amazon.com/lambda/
+ - Pre-requisites
+    - AWS account (admin role recommended)
+    - Cloud9 IDE
+
 ## Steps 1 - Basic preparation
  - Install dependencies. Libraries we need are included in setup.sh. Run it to install.
  - Create an aws S3 bucket to store the image to be used in next steps. This bucket is also used to store processed image and enable a signed url to allow temporary access to the image from a user who doesn't have aws credentials. 
@@ -40,9 +48,6 @@ python3 upload_to_s3.py -i <image_name> -b <bucket_name>
 
 ## Steps 3 - Create a main function to index the image we put to S3 
  - Modify the variable names in index.py 
-```bash
-python3 index.py
-```
  - It performs tasks below sequentially: 
     - Indexing the face to AWS Rekognition service 
     - Process the metadata received from Rekognition service 
@@ -50,6 +55,10 @@ python3 index.py
     - Put a bounding box around the face on the image 
     - Send the image back to the s3 bucket 
  - Note: As we set "MaxFaces = 1", rekognition only return metadata about the most prominent face
+ - Run it
+```bash
+python3 index.py
+```
 
 ## Steps 4 - Generate a signed url for users without aws credentials to temporarily access the image
  - A user who does not have AWS credentials or permission to access an S3 object can be granted temporary access by using a presigned URL
