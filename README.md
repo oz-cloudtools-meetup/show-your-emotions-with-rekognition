@@ -79,11 +79,23 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
 ## (workshop option)
 ### Step 5 - Go serverless: create a lambda function
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
- - Features:
+ - Lambda features:
     - No server to manage
         - AWS Lambda automatically runs your code without requiring you to provision or manage servers. Just write the code and upload it to Lambda
     - Continous scaling
         - AWS Lambda automatically scales your application by running code in response to each trigger. Your code runs in parallel and processes each trigger individually, scaling precisely with the size of the workload
     - Subsecond metering 
         - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
- - 
+ - Follow steps below to create a lambda function via management console:
+    - Step 1 - Create a lambda function
+        - Open aws management console, type "lambda" into the "Find Service" search bar and enter
+        - Hit "Create function" then check "Author from scratch"
+        - Enter a name for "Function name"
+        - Choose Python 3.6 for Runtime
+        - Choose "Create a new role with basic lambda permissions" then hit "Create function"
+    - Step 2 - Add a event trigger to this lambda function following last step
+        - Hit "+ Add trigger" button then select "S3"
+        - Choose the bucket that has just been created and select "All object ctreate events" for Event type.
+        - Check "Enable trigger" and hit "Add" button
+        - Hit "Functions" at the topleft corner of the refreshed page
+    - Step 3 - 
