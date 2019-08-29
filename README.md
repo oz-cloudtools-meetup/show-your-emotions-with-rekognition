@@ -77,5 +77,5 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
  - Copy the url prompted on console and paste it to your browser
 
 ## (workshop option)
-## Step 5 - Create a lambda function
+#Step 5 - Create a lambda function
  - 
