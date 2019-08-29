@@ -11,7 +11,8 @@
 # Make sure the console outputs "Dependencies installed successfully." 
 ./setup.sh
 
-# Create your s3 bucket using command below, pick a globally unique bucket name. This bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
+# Create your s3 bucket using command below, pick a globally unique bucket name. 
+# This bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
 # If successful, console will prompt: "make_bucket:<your bucket name>"
 # Use command  'aws s3 ls' to verify the creation of bucket
 aws s3 mb s3://<your_bucket_name>
@@ -27,11 +28,9 @@ git clone <repo>
 ## Steps 2 - Upload an image to S3 bucket
  - Ready a photo and save it onto your local machine, make sure there is at lease one face in it. AWS rekognition service can index up to 100 faces at once, here we keep it simple by letting rekognition index the one prominent face. Detail shown in step 3.
  - Upload it to your Cloud9 IDE working directory: same directory where .py files resides
- ```bash
-# In case the Cloud9 'Upload Local Files" doesn't work, follow the steps below:
-# Step 1: Change "IMAGE_PATH" in 'convertImageBase64.py' and run it on local machine against the image file
-# Step 2: In Cloud9, open 'assembleImg.py', paste the base64 string into the designated place, and change the new image name, then run it. An image will be created.
-```
+ - In case the Cloud9 'Upload Local Files" doesn't work, follow the steps below:
+    - Step 1: Change "IMAGE_PATH" in 'convertImageBase64.py' and run it on local machine against the image file
+    - Step 2: In Cloud9, open 'assembleImg.py', paste the base64 string into the designated place, and change the new image name, then run it. An image will be created.
  - Check if the image is in the working directory.
  - Give the command below to upload the image to the s3 bucket
 ```bash
