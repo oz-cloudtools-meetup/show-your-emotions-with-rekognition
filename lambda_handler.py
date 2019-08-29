@@ -1,5 +1,6 @@
 import json
 import cv2
+import io
 import boto3
 
 def lambda_handler(event, context):
@@ -8,12 +9,12 @@ def lambda_handler(event, context):
     IMAGE = event['Records'][0]['s3']['object']['key']
     
     # Modify variable names here
-    COLLECTION = "<your_collection_name>"
-    PROCESSED_IMAGE = "<you_name_the_processed_image>"
+    COLLECTION = "<your_collection>"
+    PROCESSED_IMAGE = "you_name_the_processed_image"
     
     # Create an s3 client 's3' and then send this image to the s3 bucket
     s3 = boto3.resource('s3')
-    s3.meta.client.upload_file(IMAGE, BUCKET, IMAGE)
+    # s3.meta.client.upload_file(IMAGE, BUCKET, IMAGE)
     
     # Create a rekognition client 'reko'
     reko = boto3.client('rekognition')
@@ -28,8 +29,8 @@ def lambda_handler(event, context):
             }
         },
         DetectionAttributes = ['ALL'],
-        MaxFaces = 1,
-        QualityFilter = 'AUTO'
+        # MaxFaces = 1,
+        # QualityFilter = 'AUTO'
     )
     # print(response)
     
@@ -60,11 +61,15 @@ def lambda_handler(event, context):
     print("Gender: " + str(gender))
     print("Age between: " + str(agelow) + " to " + str(agehigh))
     print("Emotion: " + str(emotion))
+
+    # Download the image to Lambda's default download dir: '/tmp/'
+    localPath = "/tmp/" + IMAGE
+    s3.meta.client.download_file(BUCKET, IMAGE, localPath)
     
     # Get the image W x H 
-    img = cv2.imread('testFace.jpg',1)
-    imgHeight, imgWidth, channels= img.shape
-    
+    img = cv2.imread(localPath, 1)
+    imgHeight, imgWidth, channels = img.shape
+
     # Get bounding box values and turn it into drawing coordinates
     box = info['BoundingBox']
     left = int(imgWidth * box['Left'])
@@ -76,5 +81,6 @@ def lambda_handler(event, context):
     cv2.rectangle(img, (left, top), (width, height), (0, 255, 0), 2)
     
     # Save this image and send it to s3
-    cv2.imwrite(PROCESSED_IMAGE, img)
-    s3.meta.client.upload_file(PROCESSED_IMAGE, BUCKET, PROCESSED_IMAGE)
+    tempPath = "/tmp/" + PROCESSED_IMAGE
+    cv2.imwrite(tempPath, img)
+    s3.meta.client.upload_file(tempPath, BUCKET, PROCESSED_IMAGE)

@@ -116,4 +116,7 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
         ```
         - NOTE: NOT BEEN TESTED YET
-        - 
+        - Change the content under "Handler" to format:
+            - <python_file_name_without_extension.function_name>
+            - for example: the python file name is abc.py and the functions name is "def lambda_handler(event, context):", change the content under "Handler" to "abc.lambda_handler"
+        - Change "memory" to 512 mb in Basic setting section
