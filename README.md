@@ -88,7 +88,7 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
             - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
  - Follow steps below to create a lambda function via management console:
     - Step 1 - Steup IAM role 
-        - Go the IAM by clicking Service the topleft corner and type in "IAM" and enter
+        - Go to the IAM dashboard by clicking Service the topleft corner and type in "IAM" and enter
         - Choose "Roles" --> "Create role" --> "AWS service" --> "Lambda" --> "Lambda" --> "Select your use case - lambda" --> "Next: Permission" --> "Create policy" --> Check "AmazonS3FullAccess" and "AmazonRekognitionFullAccess" --> "Next: Tags" --> "Next: Review" --> type a name into "Role name" --> "Create role"
     - Step 2 - Create a lambda function
         - Open aws management console, type "lambda" into the "Find Service" search bar and enter
@@ -108,3 +108,8 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
         - Hit "Save" at topright corner
     - Step 5 - Setup environment for lambda
         - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up accordingly. 
+        - In Cloud9 termianl, run: 
+        ```bash
+            - docker run --rm -v $(pwd):/package tiivik/lambdazipper opencv-python 
+        ```
+        - "opencv-python.zip" will be generated at current working directory
