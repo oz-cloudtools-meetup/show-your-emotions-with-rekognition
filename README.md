@@ -98,4 +98,7 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
         - Choose the bucket that has just been created and select "All object ctreate events" for Event type.
         - Check "Enable trigger" and hit "Add" button
         - Hit "Functions" at the topleft corner of the refreshed page
-    - Step 3 - 
+    - Step 3 - Edit the lambda function
+        - Choose the lambda function from last step
+        - Scroll down to "Function code" area and replace the code in editor with the code in lambda_handler.py (the file in the repo)
+        - 
