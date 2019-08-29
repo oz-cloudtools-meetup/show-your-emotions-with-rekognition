@@ -2,15 +2,14 @@
 import cv2
 import boto3
 
-# Put bucketname here
+# Modify varible names here
 BUCKET = "<YOUR_BUCKET>"
 IMAGE = "<YOUR_IMAGE>"
 COLLECTION = "<YOUR_COLLECTION>"
 PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>"
 
-# Create an s3 client 's3' and then send this image to the s3 bucket
+# Create an s3 client 's3'
 s3 = boto3.resource('s3')
-s3.meta.client.upload_file(IMAGE, BUCKET, IMAGE)
 
 # Create a rekognition client 'reko'
 reko = boto3.client('rekognition')
