@@ -103,13 +103,17 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
         - Hit "Functions" at the topleft corner of the refreshed page
     - Step 4 - Edit the lambda function
         - Choose the lambda function from last step
-        - Scroll down to "Function code" area and replace the code in editor with the code in lambda_handler.py (the file in the repo)
+        - Edit lambda_handler.py with some variable names changed (the file in the repo)
+        - Scroll down to "Function code" area and replace the code in editor with the modified code in lambda_handler.py
         - Change "Timeout" to 10 sec in Basic setting section
         - Hit "Save" at topright corner
     - Step 5 - Setup environment for lambda
         - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up accordingly. 
         - In Cloud9 termianl, run: 
         ```bash
-            - docker run --rm -v $(pwd):/package tiivik/lambdazipper opencv-python 
+            docker run --rm -v $(pwd):/package tiivik/lambdazipper opencv-python 
+            sudo zip -r9 opencv-python.zip lambda_handler.py
+            aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
         ```
-        - "opencv-python.zip" will be generated at current working directory
+        - NOTE: NOT BEEN TESTED YET
+        - 
