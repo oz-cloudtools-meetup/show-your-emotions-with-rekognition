@@ -1,6 +1,5 @@
 import json
 import cv2
-import io
 import boto3
 
 def lambda_handler(event, context):
@@ -28,7 +27,7 @@ def lambda_handler(event, context):
                 'Name': IMAGE,
             }
         },
-        DetectionAttributes = ['ALL'],
+        DetectionAttributes = ['ALL']
         # MaxFaces = 1,
         # QualityFilter = 'AUTO'
     )

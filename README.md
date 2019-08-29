@@ -115,8 +115,19 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
             sudo zip -r9 opencv-python.zip lambda_handler.py
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
         ```
-        - NOTE: NOT BEEN TESTED YET
-        - Change the content under "Handler" to format:
-            - <python_file_name_without_extension.function_name>
-            - for example: the python file name is abc.py and the functions name is "def lambda_handler(event, context):", change the content under "Handler" to "abc.lambda_handler"
+        - Change the content under "Handler" section to: "lambda_handler.lambda_handler" <-- without double quotes
         - Change "memory" to 512 mb in Basic setting section
+        - Edit lambda_handler.py in Cloud9:
+            - change variable names follow the comments
+        - Then in Cloud9 termianl, run: 
+        ```bash
+            sudo zip -r9 opencv-python.zip lambda_handler.py
+            aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
+        ```
+    - Step 6 - Trigger the lambda
+        - Now we are ready to trigger the lambda function
+        - Use command below:
+        ```bash
+        python3 upload_to_s3.py -i <image_name> -b <bucket_name>
+        ```
+    - Step 7 - Check the s3 bucket, open the lambda-processed image. There should be a bounding box around the face drew by the lambda function.
