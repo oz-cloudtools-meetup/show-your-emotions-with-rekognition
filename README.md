@@ -79,13 +79,13 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
 ## (workshop option)
 ### Step 5 - Go serverless: create a lambda function
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
- - Lambda features:
-    - No server to manage
-        - AWS Lambda automatically runs your code without requiring you to provision or manage servers. Just write the code and upload it to Lambda
-    - Continous scaling
-        - AWS Lambda automatically scales your application by running code in response to each trigger. Your code runs in parallel and processes each trigger individually, scaling precisely with the size of the workload
-    - Subsecond metering 
-        - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
+    - Lambda features:
+        - No server to manage
+            - AWS Lambda automatically runs your code without requiring you to provision or manage servers. Just write the code and upload it to Lambda
+        - Continous scaling
+            - AWS Lambda automatically scales your application by running code in response to each trigger. Your code runs in parallel and processes each trigger individually, scaling precisely with the size of the workload
+        - Subsecond metering 
+            - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
  - Follow steps below to create a lambda function via management console:
     - Step 1 - Create a lambda function
         - Open aws management console, type "lambda" into the "Find Service" search bar and enter
