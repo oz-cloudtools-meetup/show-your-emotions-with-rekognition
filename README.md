@@ -17,19 +17,23 @@
 ```bash
 # Install dependencies
 # Make sure the console outputs "Dependencies installed successfully." 
+
 ./setup.sh
 
 # Create your s3 bucket using command below, pick a globally unique bucket name. 
 # This bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
 # If successful, console will prompt: "make_bucket:<your bucket name>"
 # Use command  'aws s3 ls' to verify the creation of bucket
+
 aws s3 mb s3://<your_bucket_name>
 
 # Create a rekognition pool 
 # Console will prompt "StatusCode": 200 when successful
+
 aws rekognition create-collection --collection-id <your_collection_name>
 
 # Clone the github repo
+
 git clone <repo>
 ```
 
@@ -43,6 +47,7 @@ git clone <repo>
  - Give the command below to upload the image to the s3 bucket
 ```bash
 # Parameter -i followed by path to the image and -b followed by the bucket name are required
+
 python3 upload_to_s3.py -i <image_name> -b <bucket_name>
 ```
 
@@ -66,6 +71,7 @@ python3 index.py
  - A presigned URL remains valid for a limited period of time which is specified when the URL is generated
 ```bash
 # Parameter -i followed by name of processed image and -b followed by the bucket name are required
+
 python3 url_gen.py -i <image_name> -b <bucket_name>
 ```
  - Copy the url prompted on console and paste it to your browser
