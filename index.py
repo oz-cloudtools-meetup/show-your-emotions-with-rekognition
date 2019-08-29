@@ -8,11 +8,9 @@ IMAGE = "<YOUR_IMAGE>"
 COLLECTION = "<YOUR_COLLECTION>"
 PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>"
 
-# Create an s3 client 's3'
-s3 = boto3.resource('s3')
-
-# Create a rekognition client 'reko'
-reko = boto3.client('rekognition')
+# Create an s3 client 's3' and a rekognition client 'reko'
+s3 = boto3.resource('s3') 
+reko = boto3.client('rekognition') 
 
 # Index the face and receive response from rekognition service
 response = reko.index_faces(

@@ -1,12 +1,20 @@
 #!/usr/bin/python3
 # Generate a presigned URL for the S3 object
-
 import logging
 import boto3
 from botocore.exceptions import ClientError
 
-BUCKET = "<YOUR_BUCKET>"
-PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>"
+BUCKET = ""
+PROCESSED_IMAGE = ""
+
+ap = argparse.ArgumentParser()
+ap.add_argument('-i', '--image', required=True, help = 'name of processed image')
+ap.add_argument('-b', '--bucket', required=True, help = 'your bucket name')
+args = ap.parse_args()
+if (args.image != None):
+    PROCESSED_IMAGE = args.image 
+if (args.bucket != None):
+    BUCKET = args.bucket 
 
 def create_presigned_url(bucket_name, object_name, expiration=3600):
     s3_client = boto3.client('s3')
