@@ -87,18 +87,24 @@ python3 url_gen.py -i <image_name> -b <bucket_name>
         - Subsecond metering 
             - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
  - Follow steps below to create a lambda function via management console:
-    - Step 1 - Create a lambda function
+    - Step 1 - Steup IAM role 
+        - Go the IAM by clicking Service the topleft corner and type in "IAM" and enter
+        - Choose "Roles" --> "Create role" --> "AWS service" --> "Lambda" --> "Lambda" --> "Select your use case - lambda" --> "Next: Permission" --> "Create policy" --> Check "AmazonS3FullAccess" and "AmazonRekognitionFullAccess" --> "Next: Tags" --> "Next: Review" --> type a name into "Role name" --> "Create role"
+    - Step 2 - Create a lambda function
         - Open aws management console, type "lambda" into the "Find Service" search bar and enter
         - Hit "Create function" then check "Author from scratch"
         - Enter a name for "Function name"
         - Choose Python 3.6 for Runtime
-        - Choose "Create a new role with basic lambda permissions" then hit "Create function"
-    - Step 2 - Add a event trigger to this lambda function following last step
+        - Choose "Use an existing role" then choose the IAM role created from last step
+    - Step 3 - Add a event trigger to this lambda function following last step
         - Hit "+ Add trigger" button then select "S3"
         - Choose the bucket that has just been created and select "All object ctreate events" for Event type.
         - Check "Enable trigger" and hit "Add" button
         - Hit "Functions" at the topleft corner of the refreshed page
-    - Step 3 - Edit the lambda function
+    - Step 4 - Edit the lambda function
         - Choose the lambda function from last step
         - Scroll down to "Function code" area and replace the code in editor with the code in lambda_handler.py (the file in the repo)
-        - 
+        - Change "Timeout" to 10 sec in Basic setting section
+        - Hit "Save" at topright corner
+    - Step 5 - Setup environment for lambda
+        - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up accordingly. 
