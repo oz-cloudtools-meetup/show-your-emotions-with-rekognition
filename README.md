@@ -3,6 +3,7 @@
  - AWS services involved in this workshop
     - S3 - https://aws.amazon.com/s3/
     - Rekognition - https://aws.amazon.com/rekognition/
+    - Cloud9 - https://aws.amazon.com/cloud9/
     - Lambda - https://aws.amazon.com/lambda/   (Workshop option)
  - Pre-requisites
     - AWS account (admin role recommended)
