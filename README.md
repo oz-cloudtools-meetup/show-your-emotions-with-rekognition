@@ -108,26 +108,32 @@
         - Change "Timeout" to 10 sec in Basic setting section
         - Hit "Save" at topright corner
     - Step 5 - Setup environment for lambda
-        - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up accordingly. 
+        - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up here. 
         - In Cloud9 termianl, run: 
-        ```bash
+            ```bash
+            # Create a .zip file contains the package we need 
             docker run --rm -v $(pwd):/package tiivik/lambdazipper opencv-python 
             sudo zip -r9 opencv-python.zip lambda_handler.py
+
+            # Update the lambda function we created
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
-        ```
+            ```
         - Change the content under "Handler" section to: "lambda_handler.lambda_handler" <-- without double quotes
         - Change "memory" to 512 mb in Basic setting section
         - Edit lambda_handler.py in Cloud9:
             - change variable names follow the comments
         - Then in Cloud9 termianl, run: 
-        ```bash
+            ```bash
+            # Update the lambda function
             sudo zip -r9 opencv-python.zip lambda_handler.py
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
-        ```
+            ```
     - Step 6 - Trigger the lambda
         - Now we are ready to trigger the lambda function
         - Use command below:
-        ```bash
-        python3 upload_to_s3.py -i <image_name> -b <bucket_name>
-        ```
-    - Step 7 - Check the s3 bucket, open the lambda-processed image. There should be a bounding box around the face drew by the lambda function.
+            ```bash
+            # Upload an image to the bucket
+            # The bucket event will trigger the lambda function to run
+            python3 upload_to_s3.py -i <image_name> -b <bucket_name>
+            ```
+    - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
