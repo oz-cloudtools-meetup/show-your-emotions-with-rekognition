@@ -1,7 +1,5 @@
 # Show your emotions with Rekognition
-<!-- TODO -->
-<!-- Elaboration about the aws services used here S3 Rekognition Lambda -->
-<!-- list the pre-requisites for the workshop -->
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Diagram1.png?raw=true)
  - AWS services involved in this workshop
     - S3 - https://aws.amazon.com/s3/
     - Rekognition - https://aws.amazon.com/rekognition/
