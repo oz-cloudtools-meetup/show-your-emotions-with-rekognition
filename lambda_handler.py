@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         Image = {
             'S3Object': {
                 'Bucket': BUCKET,
-                'Name': IMAGE,
+                'Name': IMAGE
             }
         },
         DetectionAttributes = ['ALL']
