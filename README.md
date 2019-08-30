@@ -7,7 +7,13 @@
     - Lambda - https://aws.amazon.com/lambda/   (Workshop option)
  - Pre-requisites
     - AWS account (admin role recommended)
-    - Cloud9 IDE
+    - Cloud9 IDE 
+        - Login into aws management console, type "cloud9" into the search bar and enter
+        - Hit "Create environment" button
+        - Choose the name and hit "Next step"
+        - Choose "Create a new instance for environment (EC2)" --> t2.micro --> Amazon Linux --> Leave everything else default --> "Next step" --> "Create environment"
+        - Now wait for the IDE to be initialized
+
 ## Workshop diagram
 ![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Simple_Steps.png?raw=true)
 ## Step 1 - Basic preparation
