@@ -9,11 +9,10 @@ def lambda_handler(event, context):
     
     # Modify variable names here
     COLLECTION = "<your_collection>"
-    PROCESSED_IMAGE = "you_name_the_processed_image"
+    PROCESSED_IMAGE = "<you_name_the_processed_image>"
     
     # Create an s3 client 's3' and then send this image to the s3 bucket
     s3 = boto3.resource('s3')
-    # s3.meta.client.upload_file(IMAGE, BUCKET, IMAGE)
     
     # Create a rekognition client 'reko'
     reko = boto3.client('rekognition')
@@ -31,7 +30,6 @@ def lambda_handler(event, context):
         # MaxFaces = 1,
         # QualityFilter = 'AUTO'
     )
-    # print(response)
     
     # Extract face metadata from the response
     info = response['FaceRecords'][0]['FaceDetail']
@@ -60,24 +58,21 @@ def lambda_handler(event, context):
     print("Gender: " + str(gender))
     print("Age between: " + str(agelow) + " to " + str(agehigh))
     print("Emotion: " + str(emotion))
-
-    # Download the image to Lambda's default download dir: '/tmp/'
-    localPath = "/tmp/" + IMAGE
-    s3.meta.client.download_file(BUCKET, IMAGE, localPath)
     
     # Get the image W x H 
+    localPath = "/tmp/" + IMAGE
+    s3.meta.client.download_file(BUCKET, IMAGE, localPath)
     img = cv2.imread(localPath, 1)
     imgHeight, imgWidth, channels = img.shape
 
-    # Get bounding box values and turn it into drawing coordinates
+    # Draw on the image 
     box = info['BoundingBox']
     left = int(imgWidth * box['Left'])
     top = int(imgHeight * box['Top'])
     width = int(imgWidth * box['Width']) + left
     height = int(imgHeight * box['Height']) + top
-    
-    # Draw on the image
     cv2.rectangle(img, (left, top), (width, height), (0, 255, 0), 2)
+    # cv2.putText(img, str(emotion), (50, 50), FONT, 1, (0, 255, 0), 2, cv2.LINE_AA)
     
     # Save this image and send it to s3
     tempPath = "/tmp/" + PROCESSED_IMAGE
