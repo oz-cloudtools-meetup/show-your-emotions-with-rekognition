@@ -76,6 +76,7 @@
  - Copy the url prompted on console and paste it to your browser
 
 ## Step 5 (workshop option) - Go serverless: create a lambda function
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Lambda.png?raw=true)
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
     - Lambda features:
         - No server to manage
