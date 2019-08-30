@@ -4,7 +4,7 @@
     - S3 - https://aws.amazon.com/s3/
     - Rekognition - https://aws.amazon.com/rekognition/
     - Cloud9 - https://aws.amazon.com/cloud9/
-    - Lambda - https://aws.amazon.com/lambda/   (Workshop option)
+    - Lambda - https://aws.amazon.com/lambda/   (Workshop option, refer Step 5 below)
  - Pre-requisites
     - AWS account (admin role recommended)
     - Cloud9 IDE 
