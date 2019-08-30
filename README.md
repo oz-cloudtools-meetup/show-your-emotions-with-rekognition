@@ -85,7 +85,7 @@
             - AWS Lambda automatically scales your application by running code in response to each trigger. Your code runs in parallel and processes each trigger individually, scaling precisely with the size of the workload
         - Subsecond metering 
             - With AWS Lambda, you are charged for every 100ms your code executes and the number of times your code is triggered. You don't pay anything when your code isn't running
- - Follow steps below to create a lambda function via management console:
+ - Follow steps below to create a lambda function:
     - Step 1 - Steup IAM role 
         - Go to the IAM dashboard by clicking Service the topleft corner and type in "IAM" and enter
         - Choose "Roles" --> "Create role" --> "AWS service" --> "Lambda" --> "Lambda" --> "Select your use case - lambda" --> "Next: Permission" --> "Create policy" --> Check "AmazonS3FullAccess" and "AmazonRekognitionFullAccess" --> "Next: Tags" --> "Next: Review" --> type a name into "Role name" --> "Create role"
@@ -111,10 +111,12 @@
         - In Cloud9 termianl, run: 
             ```bash
             # Create a .zip file contains the package we need 
+
             docker run --rm -v $(pwd):/package tiivik/lambdazipper opencv-python 
             sudo zip -r9 opencv-python.zip lambda_handler.py
 
             # Update the lambda function we created
+
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
             ```
         - Change the content under "Handler" section to: "lambda_handler.lambda_handler" <-- without double quotes
@@ -124,6 +126,7 @@
         - Then in Cloud9 termianl, run: 
             ```bash
             # Update the lambda function
+
             sudo zip -r9 opencv-python.zip lambda_handler.py
             aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://opencv-python.zip
             ```
@@ -133,6 +136,7 @@
             ```bash
             # Upload an image to the bucket
             # The bucket event will trigger the lambda function to run
+            
             python3 upload_to_s3.py -i <image_name> -b <bucket_name>
             ```
     - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
