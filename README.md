@@ -8,7 +8,8 @@
  - Pre-requisites
     - AWS account (admin role recommended)
     - Cloud9 IDE
-
+## Workshop diagram
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Simple_Steps.png?raw=true)
 ## Step 1 - Basic preparation
  - Install dependencies. Libraries we need are included in setup.sh. Run it to install.
  - Create an aws S3 bucket to store the image to be used in next steps. This bucket is also used to store processed image and enable a signed url to allow temporary access to the image from a user who doesn't have aws credentials. 
