@@ -59,7 +59,6 @@
     - Print the resulsts of facial analysis to the console
     - Put a bounding box around the face on the image 
     - Send the image back to the s3 bucket 
- - Note: As we set "MaxFaces = 1", rekognition only return metadata about the most prominent face
  - Run it
     ```bash
     python3 index.py
@@ -136,7 +135,7 @@
             ```bash
             # Upload an image to the bucket
             # The bucket event will trigger the lambda function to run
-            
+
             python3 upload_to_s3.py -i <image_name> -b <bucket_name>
             ```
     - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
