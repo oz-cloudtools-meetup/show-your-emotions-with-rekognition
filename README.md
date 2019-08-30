@@ -1,5 +1,5 @@
 # Show your emotions with Rekognition
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Diagram1.png?raw=true)
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Banner.png?raw=true)
  - AWS services involved in this workshop
     - S3 - https://aws.amazon.com/s3/
     - Rekognition - https://aws.amazon.com/rekognition/
