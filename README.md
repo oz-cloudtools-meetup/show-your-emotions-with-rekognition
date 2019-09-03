@@ -1,4 +1,4 @@
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Banner.png?raw=true)
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Banner.png?raw=true)
 # Getting Started: Show your emotions with AWS Rekognition
 
 ### What is this?
@@ -23,7 +23,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     - Now wait for the IDE to be initialized
 
 ## Workshop diagram
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Simple_Steps.png?raw=true)
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Simple_Steps.png?raw=true)
 ## Step 1 - Basic preparation
  - Install dependencies. Libraries we need are included in setup.sh. Run it to install.
  - Create an aws S3 bucket to store the image to be used in next steps. This bucket is also used to store processed image and enable a signed url to allow temporary access to the image from a user who doesn't have aws credentials. 
@@ -90,7 +90,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - Copy the url prompted on console and paste it to your browser
 
 ## Step 5 (workshop option) - Go serverless: create a lambda function
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Lambda.png?raw=true)
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Lambda.png?raw=true)
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
     - Lambda features:
         - No server to manage
