@@ -1,5 +1,6 @@
-# Getting Started: Show your emotions with AWS Rekognition
 ![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Banner.png?raw=true)
+# Getting Started: Show your emotions with AWS Rekognition
+
 ### What is this?
 This is the <b>Show your emotions with Rekognition</b> repository as part of the event organised by the [Melbourne AWS Programming and Tools Meetup](https://www.meetup.com/Melbourne-AWS-Programming-and-Tools-Meetup/events/261692367/).
 
@@ -13,13 +14,13 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - Cloud9 - https://aws.amazon.com/cloud9/
  - Lambda - https://aws.amazon.com/lambda/   (Workshop option, refer Step 5 below)
 ## Pre-requisites
-    - AWS account (admin role recommended)
-    - Cloud9 IDE 
-        - Login into aws management console, type "cloud9" into the search bar and enter
-        - Hit "Create environment" button
-        - Choose the name and hit "Next step"
-        - Choose "Create a new instance for environment (EC2)" --> t2.micro --> Amazon Linux --> Leave everything else default --> "Next step" --> "Create environment"
-        - Now wait for the IDE to be initialized
+ - AWS account (admin role recommended)
+ - Cloud9 IDE 
+    - Login into aws management console, type "cloud9" into the search bar and enter
+    - Hit "Create environment" button
+    - Choose the name and hit "Next step"
+    - Choose "Create a new instance for environment (EC2)" --> t2.micro --> Amazon Linux --> Leave everything else default --> "Next step" --> "Create environment"
+    - Now wait for the IDE to be initialized
 
 ## Workshop diagram
 ![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Simple_Steps.png?raw=true)
