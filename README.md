@@ -1,6 +1,5 @@
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Banner.png?raw=true)
 # Getting Started: Show your emotions with AWS Rekognition
-
+![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Banner.png?raw=true)
 ### What is this?
 This is the <b>Show your emotions with Rekognition</b> repository as part of the event organised by the [Melbourne AWS Programming and Tools Meetup](https://www.meetup.com/Melbourne-AWS-Programming-and-Tools-Meetup/events/261692367/).
 
@@ -22,7 +21,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     - Choose "Create a new instance for environment (EC2)" --> t2.micro --> Amazon Linux --> Leave everything else default --> "Next step" --> "Create environment"
     - Now wait for the IDE to be initialized
 
-## Workshop diagram
+## Workshop diagram (step 1 to 4)
 ![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Simple_Steps.png?raw=true)
 ## Step 1 - Basic preparation
  - Install dependencies. Libraries we need are included in setup.sh. Run it to install.
