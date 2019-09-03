@@ -1,4 +1,9 @@
-# Show your emotions with Rekognition
+# Getting started: Show your emotions with AWS Rekognition
+### What is this?
+This is the <b>Show your emotions with Rekognition</b> repository as part of the event organised by the [Melbourne AWS Programming and Tools Meetup](https://www.meetup.com/Melbourne-AWS-Programming-and-Tools-Meetup/events/261692367/).
+
+This repository contains instructions and assets to build your first AWS Rekognition application with python and Cloud9 IDE hosted on AWS. It is split up into 5 Steps, each containing instructions to get your first Rekognition project to work. Step 5 is the option to go serverless via putting code into a AWS Lambda function which is triggered by S3 event.
+
 ![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/Banner.png?raw=true)
  - AWS services involved in this workshop
     - S3 - https://aws.amazon.com/s3/
