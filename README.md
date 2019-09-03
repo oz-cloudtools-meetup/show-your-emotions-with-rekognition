@@ -74,7 +74,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     python3 upload_to_s3.py -i <image_name> -b <bucket_name>
     ```
 
-## Step 3 - Use the main function to index the image we put to S3 
+## Step 3 - Use the main function to index the image to Rekognition 
  - Modify the variable names in index.py according to the comments
 
  - It performs tasks below sequentially: 
