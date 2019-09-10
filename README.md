@@ -1,5 +1,5 @@
 # Getting Started: Show your emotions with AWS Rekognition
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Banner.png?raw=true)
+![Diagram](https://github.com/melbourne-cloudtools-meetup/show-your-emotions-with-rekognition/blob/ALL_STEPS/repoImages/Banner.png?raw=true)
 ### What is this?
 This is the <b>Show your emotions with Rekognition</b> repository as part of the event organised by the [Melbourne AWS Programming and Tools Meetup](https://www.meetup.com/Melbourne-AWS-Programming-and-Tools-Meetup/events/261692367/).
 
@@ -26,7 +26,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     - Now wait for the IDE to be initialized
 
 ## Workshop diagram (step 1 to 4)
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Simple_Steps.png?raw=true)
+![Diagram](https://github.com/melbourne-cloudtools-meetup/show-your-emotions-with-rekognition/blob/ALL_STEPS/repoImages/Simple_Steps.png?raw=true)
 ## Step 1 - Basic preparation
  - Install dependencies. Libraries we need are included in setup.sh. Run it to install.
 
@@ -103,7 +103,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - Copy the url prompted on console and paste it to your browser
 
 ## Step 5 (workshop option) - Go serverless: create a lambda function
-![Diagram](https://github.aus.thenational.com/TigerTeam/AWS_Meetup/blob/ALL_STEPS/repoImages/Lambda.png?raw=true)
+![Diagram](https://github.com/melbourne-cloudtools-meetup/show-your-emotions-with-rekognition/blob/ALL_STEPS/repoImages/Lambda.png?raw=true)
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 
     - Lambda features:
