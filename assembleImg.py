@@ -1,4 +1,4 @@
-# Used to bypass s3 blockage at nab
+# Used to bypass s3 blockage
 import base64
 from PIL import Image
 from io import BytesIO
