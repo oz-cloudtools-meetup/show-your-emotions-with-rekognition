@@ -20,6 +20,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - AWS account (admin role recommended)
  - Cloud9 IDE 
     - Login into aws management console, type "cloud9" into the search bar and enter
+    - Switch region to Singapore (any available Cloud9 region will work, but closest region will reduce latency of the IDE)
     - Hit "Create environment" button
     - Choose the name and hit "Next step"
     - Choose "Create a new instance for environment (EC2)" --> t2.micro --> Amazon Linux --> Leave everything else default --> "Next step" --> "Create environment"
