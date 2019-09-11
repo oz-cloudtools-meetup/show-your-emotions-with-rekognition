@@ -69,12 +69,13 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - Upload it to your Cloud9 IDE working directory: same directory where .py files resides
 
  - In case the Cloud9 'Upload Local Files" doesn't work, follow the steps below:
-    - Step 1: Change "IMAGE_PATH" in 'convertImageBase64.py' and run it on local machine against the image file
+    - Step 1: Change "IMAGE_PATH" in 'convertImageBase64.py' (e.g. "IMAGE_PATH = "~/workspace/wolverine.jpg") and run it on local machine against the image file
     - Step 2: In Cloud9, open 'assembleImg.py', paste the base64 string into the designated place, and change the new image name, then run it. An image will be created.
     OR (if the file is online already)
     - Step 1: from your repo directory, curl the image(s) to the directory
     ```
     curl https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/10/1489149452-wolverine-surprise-hugh-jackman-wants-to-be-wolverine-forever-and-here-s-how-he-can-do-it.jpeg > image.jpg
+    ```
 
  - Check if the image is in the working directory.
 
