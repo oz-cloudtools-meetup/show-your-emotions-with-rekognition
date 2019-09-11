@@ -2,6 +2,7 @@
 # Generate a presigned URL for the S3 object
 import logging
 import boto3
+import argparse
 from botocore.exceptions import ClientError
 
 BUCKET = ""
