@@ -3,10 +3,10 @@ import cv2
 import boto3
 
 # Modify varible names here
-BUCKET = "<YOUR_BUCKET>"
-IMAGE = "<YOUR_IMAGE>"
-COLLECTION = "<YOUR_COLLECTION>"
-PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>"
+BUCKET = "<YOUR_BUCKET>" # e.g. rekognition-workshop
+IMAGE = "<YOUR_IMAGE>"  # e.g. raw_image.jpg
+COLLECTION = "<YOUR_COLLECTION>" # e.g. rekognition-workshop
+PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>" # e.g. processed_image.jpg
 
 if __name__=='__main__':
 
