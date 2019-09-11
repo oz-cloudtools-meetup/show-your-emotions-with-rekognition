@@ -34,6 +34,14 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
  - Create a rekognition collection to store the facial signature. A facial signature consists of feature vectors sampled by aws rekognition service from input image frame and this metadata can be used for matching faces and emotioanl analysis. AWS rekognition service groups the signatures about objects including faces into collections. 
     ```bash
+    # Clone the github repo
+
+    git clone <repo>
+    
+    # Change directory to the cloned repository
+    
+    cd show-your-emotions-with-rekognition
+    
     # Install dependencies
     # Make sure the console outputs "Dependencies installed successfully." 
 
@@ -51,9 +59,6 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
     aws rekognition create-collection --collection-id <your_collection_name>
 
-    # Clone the github repo
-
-    git clone <repo>
     ```
 
 ## Step 2 - Upload an image to S3 bucket
