@@ -4,6 +4,7 @@ import boto3
 
 # Modify varible names here
 BUCKET = "<YOUR_BUCKET>" # e.g. rekognition-workshop
+PROCESSED_BUCKET = "<YOUR_PROCESSED_BUCKET>" # e.g. rekognition-workshop-processed
 IMAGE = "<YOUR_IMAGE>"  # e.g. raw_image.jpg
 COLLECTION = "<YOUR_COLLECTION>" # e.g. rekognition-workshop
 PROCESSED_IMAGE = "<YOUR_PROCESSED_IMAGE>" # e.g. processed_image.jpg
@@ -73,4 +74,4 @@ if __name__=='__main__':
 
     # Save this image and send it to s3
     cv2.imwrite(PROCESSED_IMAGE, img)
-    s3.meta.client.upload_file(PROCESSED_IMAGE, BUCKET, PROCESSED_IMAGE)
+    s3.meta.client.upload_file(PROCESSED_IMAGE, PROCESSED_BUCKET, PROCESSED_IMAGE)
