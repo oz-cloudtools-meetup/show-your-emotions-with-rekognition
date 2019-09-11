@@ -63,7 +63,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     ```
 
 ## Step 2 - Upload an image to S3 bucket
- - Ready a photo and save it onto your local machine, make sure there is at lease one face in it. AWS rekognition service can index up to 100 faces at once, here we keep it simple by letting rekognition index the one prominent face. Detail shown in step 3.
+ - Ready a photo and save it onto your local machine, make sure there is at least one face in it. AWS Rekognition service can index up to 100 faces at once, here we keep it simple by letting rekognition index the one prominent face. Detail shown in step 3.
 
  - Upload it to your Cloud9 IDE working directory: same directory where .py files resides
 
