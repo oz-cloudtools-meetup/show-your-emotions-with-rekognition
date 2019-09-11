@@ -71,6 +71,14 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
  - In case the Cloud9 'Upload Local Files" doesn't work, follow the steps below:
     - Step 1: Change "IMAGE_PATH" in 'convertImageBase64.py' (e.g. "IMAGE_PATH = "~/workspace/wolverine.jpg") and run it on local machine against the image file
     - Step 2: In Cloud9, open 'assembleImg.py', paste the base64 string into the designated place, and change the new image name, then run it. An image will be created.
+    ```
+    ~/workspace $ python convertImageBase64.py                                                              
+   /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoK
+   CgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAFAAeADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgc...
+   qunC6hVTcQjJGPvLXhup6ZLZznerIvrjHFTboVe50kN1dWcJRiQitlcHrXe+Etdj1iBbe6AWdflSQ9Gryew1m5TKzN5sfQhq09C1z7Be+agIQkZXoKTjYE7nqBvIbDVXtpi0Suu0uBww9CKEaOObMUhUDkZNVvEtoniDw4mp6e7efAMvjg4rlNB1VpibSfHnL93AznB9anldx3P/Z
+
+   Please copy the string above into designated place in assembleImg.py manually
+   ```
     OR (if the file is online already)
     - Step 1: from your repo directory, curl the image(s) to the directory
     ```
