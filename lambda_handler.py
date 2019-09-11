@@ -6,6 +6,7 @@ def lambda_handler(event, context):
     # Fetch event trigger information
     BUCKET = event['Records'][0]['s3']['bucket']['name']
     IMAGE = event['Records'][0]['s3']['object']['key']
+    PROCESSED_BUCKET = "<YOUR_PROCESSED_BUCKET>" # e.g. rekognition-workshop-processed
     
     # Modify variable names here
     COLLECTION = "<your_collection>" # e.g. rekognition-workshop-simon
@@ -77,4 +78,4 @@ def lambda_handler(event, context):
     # Save this image and send it to s3
     tempPath = "/tmp/" + PROCESSED_IMAGE
     cv2.imwrite(tempPath, img)
-    s3.meta.client.upload_file(tempPath, BUCKET, PROCESSED_IMAGE)
+    s3.meta.client.upload_file(tempPath, PROCESSED_BUCKET, PROCESSED_IMAGE)
