@@ -100,6 +100,8 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 - Attempt to access the object by the direct URL (can be located in the object screen in the S3 console). Observe that the image is not accessible directly.
 
 ```
+E.g.
+
 This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <Error>
  <Code>AccessDenied</Code>
