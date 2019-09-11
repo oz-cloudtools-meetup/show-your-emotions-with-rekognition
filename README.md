@@ -50,15 +50,16 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
     # Create your s3 bucket using command below, pick a globally unique bucket name. 
     # This bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
-    # If successful, console will prompt: "make_bucket:<your bucket name>"
+    # If successful, console will prompt: "make_bucket:<your bucket name>" e.g. aws s3 mb s3://rekognition-workshop-simon
     # Use command  'aws s3 ls' to verify the creation of bucket
 
     aws s3 mb s3://<your_bucket_name>
 
     # Create a rekognition pool 
     # Console will prompt "StatusCode": 200 when successful
+    # e.g.  aws rekognition create-collection --collection-id rekognition-workshop-simon
 
-    aws rekognition create-collection --collection-id <your_collection_name>
+    aws rekognition create-collection --collection-id <your_collection_name> 
 
     ```
 
@@ -75,7 +76,8 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
  - Give the command below to upload the image to the s3 bucket
     ```bash
-    # Parameter -i followed by path to the image and -b followed by the bucket name are required
+    # Parameter -i followed by path to the image and -b followed by the bucket name are required 
+    # E.g. python3 upload_to_s3.py -i raw_image.jpg -b rekognition-workshop-simon
 
     python3 upload_to_s3.py -i <image_name> -b <bucket_name>
     ```
