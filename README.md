@@ -104,7 +104,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
     - Process the metadata received from Rekognition service 
     - Print the resulsts of facial analysis to the console
     - Put a bounding box around the face on the image 
-    - Send the image back to the s3 bucket 
+    - Send the image to the s3 processed images bucket 
 
  - Run it
     ```bash
@@ -136,7 +136,7 @@ This XML file does not appear to have any style information associated with it. 
 
  - A presigned URL remains valid for a limited period of time which is specified when the URL is generated
     ```bash
-    # Parameter -i followed by name of processed image and -b followed by the bucket name are required
+    # Parameter -i followed by name of processed image and -b followed by the processed images bucket name are required
 
     python3 url_gen.py -i <image_name> -b <bucket_name>
     ```
@@ -214,7 +214,7 @@ This XML file does not appear to have any style information associated with it. 
             # Upload an image to the bucket
             # The bucket event will trigger the lambda function to run
 
-            python3 upload_to_s3.py -i <image_name> -b <bucket_name>
+            python3 upload_to_s3.py -i <image_name> -b <bucket_name> -p <processed_bucket_name>
             ```
     - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
     
