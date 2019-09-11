@@ -98,7 +98,6 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
 ## Step 3 - Use the main function to index the image to Rekognition 
  - Modify the variable names in index.py according to the comments
-    - Ensure the processed bucket name is different to the raw images bucket name
 
  - It performs tasks below sequentially: 
     - Indexing the face to AWS Rekognition service 
@@ -185,6 +184,7 @@ This XML file does not appear to have any style information associated with it. 
     - Step 5 - Setup environment for lambda
     
         - IMPORTANT: Ensure the PROCESSED_BUCKET variable is set to the processed images bucket set up in Step 1
+          - Ensure the processed bucket name is different to the raw images bucket name
             ```
             E.g. change:
             PROCESSED_BUCKET = "<YOUR_PROCESSED_BUCKET>"
