@@ -216,3 +216,11 @@ This XML file does not appear to have any style information associated with it. 
             python3 upload_to_s3.py -i <image_name> -b <bucket_name>
             ```
     - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
+    
+## Step 6 (extra credit!) Mark-up the image with the emotion meta-data
+  Open lambda_handler.py in the IDE. Find the following commented out line.
+  ```
+  # cv2.putText(img, str(emotion), (50, 50), FONT, 1, (0, 255, 0), 2, cv2.LINE_AA)
+  ```
+  This line should write the main facial emotion onto the image while processing, however, it doesn't work. See if you can fix it!
+
