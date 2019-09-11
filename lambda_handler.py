@@ -8,8 +8,8 @@ def lambda_handler(event, context):
     IMAGE = event['Records'][0]['s3']['object']['key']
     
     # Modify variable names here
-    COLLECTION = "<your_collection>"
-    PROCESSED_IMAGE = "<you_name_the_processed_image>"
+    COLLECTION = "<your_collection>" # e.g. rekognition-workshop-simon
+    PROCESSED_IMAGE = "<you_name_the_processed_image>" # e.g. processed_image.jpg
     
     # Create an s3 client 's3' and then send this image to the s3 bucket
     s3 = boto3.resource('s3')
