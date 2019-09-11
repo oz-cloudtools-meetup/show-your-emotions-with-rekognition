@@ -98,6 +98,7 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
 ## Step 3 - Use the main function to index the image to Rekognition 
  - Modify the variable names in index.py according to the comments
+    - Ensure the processed bucket name is different to the raw images bucket name
 
  - It performs tasks below sequentially: 
     - Indexing the face to AWS Rekognition service 
@@ -182,6 +183,14 @@ This XML file does not appear to have any style information associated with it. 
         - Hit "Save" at topright corner
 
     - Step 5 - Setup environment for lambda
+    
+        - IMPORTANT: Ensure the PROCESSED_BUCKET variable is set to the processed images bucket set up in Step 1
+            ```
+            E.g. change:
+            PROCESSED_BUCKET = "<YOUR_PROCESSED_BUCKET>"
+            to whatever your bucket name is:
+            PROCESSED_BUCKET = "rekognition-workshop-processed"
+            ```
 
         - Note: the library cv2 used in this lambda function is not native to aws lambda runtime environment. So we need to set it up here. 
         - In Cloud9 termianl, run: 
@@ -214,7 +223,7 @@ This XML file does not appear to have any style information associated with it. 
             # Upload an image to the bucket
             # The bucket event will trigger the lambda function to run
 
-            python3 upload_to_s3.py -i <image_name> -b <bucket_name> -p <processed_bucket_name>
+            python3 upload_to_s3.py -i <image_name> -b <bucket_name>
             ```
     - Step 7 - Open the s3 bucket, there should be a lambda-processed image with the name you decided. Open the image file and see how it looks. 
     
