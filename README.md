@@ -127,6 +127,7 @@ This XML file does not appear to have any style information associated with it. 
 
 ## Step 5 (workshop option) - Go serverless: create a lambda function
 ![Diagram](https://github.com/melbourne-cloudtools-meetup/show-your-emotions-with-rekognition/blob/ALL_STEPS/repoImages/Lambda.png?raw=true)
+ - We ran index.py in the previous step but we do not want to do it every time we upload a new photo to the S3 bucket. Instead we will create a lambda function so that S3 will trigger the whole process automatically whenever we upload a an image to S3
  - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 
     - Lambda features:
