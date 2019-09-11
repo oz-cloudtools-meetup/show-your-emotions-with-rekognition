@@ -48,12 +48,13 @@ This is the <b>Show your emotions with Rekognition</b> repository as part of the
 
     ./setup.sh
 
-    # Create your s3 bucket using command below, pick a globally unique bucket name. 
-    # This bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
+    # Create your s3 buckets using command below, pick a globally unique bucket name. 
+    # These bucket name will be used in next steps. Name can be a mixture of lowercase letters and numbers.
     # If successful, console will prompt: "make_bucket:<your bucket name>" e.g. aws s3 mb s3://rekognition-workshop-simon
     # Use command  'aws s3 ls' to verify the creation of bucket
 
-    aws s3 mb s3://<your_bucket_name>
+    aws s3 mb s3://<your_raw_images_bucket_name>
+    aws s3 mb s3://<your_processed_images__bucket_name>
 
     # Create a rekognition pool 
     # Console will prompt "StatusCode": 200 when successful
